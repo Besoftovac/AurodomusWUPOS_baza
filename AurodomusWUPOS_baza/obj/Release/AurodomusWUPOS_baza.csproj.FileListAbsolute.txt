@@ -1,0 +1,6 @@
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\AurodomusWUPOS_baza\bin\Release\AurodomusWUPOS_baza.dll.config
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\AurodomusWUPOS_baza\bin\Release\AurodomusWUPOS_baza.dll
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\AurodomusWUPOS_baza\bin\Release\AurodomusWUPOS_baza.pdb
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\AurodomusWUPOS_baza\obj\Release\AurodomusWUPOS_baza.dll
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\AurodomusWUPOS_baza\obj\Release\AurodomusWUPOS_baza.pdb
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\AurodomusWUPOS_baza\obj\Release\AurodomusWUPOS_baza.csprojResolveAssemblyReference.cache

@@ -1,0 +1,17 @@
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\geckodriver.exe
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\GrabberFirstCheckUpProject.exe.config
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\GrabberFirstCheckUpProject.exe
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\GrabberFirstCheckUpProject.pdb
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\HtmlAgilityPack.dll
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\WebDriver.dll
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\WebDriver.Support.dll
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\HtmlAgilityPack.pdb
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\HtmlAgilityPack.xml
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\WebDriver.xml
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\bin\Debug\WebDriver.Support.xml
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\obj\Debug\GrabberFirstCheckUpProject.csprojResolveAssemblyReference.cache
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\obj\Debug\GrabberFirstCheckUpProject.GrabberMainForm.resources
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\obj\Debug\GrabberFirstCheckUpProject.Properties.Resources.resources
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\obj\Debug\GrabberFirstCheckUpProject.csproj.GenerateResource.Cache
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\obj\Debug\GrabberFirstCheckUpProject.exe
+d:\users\slavica\documents\visual studio 2015\Projects\AurodomusWUPOS_baza\GrabberFirstCheckUpProject\obj\Debug\GrabberFirstCheckUpProject.pdb

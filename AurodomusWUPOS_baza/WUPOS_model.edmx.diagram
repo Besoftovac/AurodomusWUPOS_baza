@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec6495b92a9548479a9c90c0090d95e5" Name="Diagram1" >
+        <EntityTypeShape EntityType="WUPOS_model.Klijent" Width="2" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="WUPOS_model.GoldCard" Width="1.5" PointX="3.25" PointY="0.5" />
+        <AssociationConnector Association="WUPOS_model.KlijentGoldCard" />
+        <EntityTypeShape EntityType="WUPOS_model.TransferUplata" Width="1.5" PointX="6.125" PointY="3.375" />
+        <EntityTypeShape EntityType="WUPOS_model.Valuta" Width="1.5" PointX="6.375" PointY="0.5" />
+        <EntityTypeShape EntityType="WUPOS_model.Drzava" Width="1.5" PointX="11.25" PointY="1.25" />
+        <AssociationConnector Association="WUPOS_model.ValutaDrzava" />
+        <EntityTypeShape EntityType="WUPOS_model.DrzavaValuta" Width="1.5" PointX="8.625" PointY="2.625" />
+        <AssociationConnector Association="WUPOS_model.ValutaDrazavaValuta" />
+        <AssociationConnector Association="WUPOS_model.DrzavaDrazavaValuta" />
+        <AssociationConnector Association="WUPOS_model.DrazavaValutaTransferIsplata" />
+        <EntityTypeShape EntityType="WUPOS_model.UslugaDostave" Width="1.5" PointX="10.25" PointY="8.25" />
+        <EntityTypeShape EntityType="WUPOS_model.VrstaTransfera" Width="1.5" PointX="3.75" PointY="9.125" />
+        <EntityTypeShape EntityType="WUPOS_model.KlijentTransfer" Width="1.5" PointX="0.75" PointY="7.25" />
+        <AssociationConnector Association="WUPOS_model.KlijentKlijentTransfer" />
+        <AssociationConnector Association="WUPOS_model.TransferUplataKlijentTransfer" />
+        <AssociationConnector Association="WUPOS_model.VrstaTransferaKlijentTransfer" />
+        <EntityTypeShape EntityType="WUPOS_model.UslugaDostaveDrzava" Width="2" PointX="8.125" PointY="5" />
+        <AssociationConnector Association="WUPOS_model.DrzavaUslugaDostaveDrzava" />
+        <AssociationConnector Association="WUPOS_model.UslugaDostaveUslugaDostaveDrzava" />
+        <EntityTypeShape EntityType="WUPOS_model.PozivniBrojDrzava" Width="2" PointX="11" PointY="5.875" />
+        <AssociationConnector Association="WUPOS_model.DrzavaPozivniBrojDrzava" />
+        <EntityTypeShape EntityType="WUPOS_model.MobilniKodDrzava" Width="2" PointX="6.25" PointY="8.125" />
+        <AssociationConnector Association="WUPOS_model.DrzavaMobilniKodDrzava" />
+        <EntityTypeShape EntityType="WUPOS_model.VrstaIdentifikacije" Width="2.125" PointX="3.5" PointY="2.625" />
+        <EntityTypeShape EntityType="WUPOS_model.IdentIspravaKlijent" Width="1.75" PointX="3.5" PointY="5" />
+        <AssociationConnector Association="WUPOS_model.KlijentIdentIspravaKlijent" />
+        <AssociationConnector Association="WUPOS_model.VrstaIdentifikacijeIdentIspravaKlijent" />
+        <AssociationConnector Association="WUPOS_model.DrzavaIdentIspravaKlijent" />
+        <EntityTypeShape EntityType="WUPOS_model.TransferIsplata" Width="1.75" PointX="0.5" PointY="11.5" />
+        <EntityTypeShape EntityType="WUPOS_model.StatusIsplate" Width="1.5" PointX="4.5" PointY="11.5" />
+        <AssociationConnector Association="WUPOS_model.StatusIsplateTransferUplata" />
+        <AssociationConnector Association="WUPOS_model.StatusIsplateTransferIsplata" />
+        <AssociationConnector Association="WUPOS_model.TransferIsplataKlijentTransfer" />
+        <AssociationConnector Association="WUPOS_model.ValutaTransferIsplata" />
+        <AssociationConnector Association="WUPOS_model.DrzavaTransferIsplata" />
+        <EntityTypeShape EntityType="WUPOS_model.Setting" Width="1.5" PointX="10.125" PointY="10.375" />
+        <EntityTypeShape EntityType="WUPOS_model.HTMLelement" Width="2.125" PointX="5.375" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WUPOS_model.URL" Width="1.5" PointX="10.625" PointY="13.125" />
+        <EntityTypeShape EntityType="WUPOS_model.URLRadnje" Width="1.5" PointX="10.375" PointY="15.875" />
+        <EntityTypeShape EntityType="WUPOS_model.URLRadnjeLevel" Width="1.5" PointX="8.5" PointY="17.75" />
+        <AssociationConnector Association="WUPOS_model.URLURLRadnje" />
+        <AssociationConnector Association="WUPOS_model.URLRadnjeURLRadnjeLevel" />
+        <AssociationConnector Association="WUPOS_model.URLRadnjeLevelHTMLelement" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

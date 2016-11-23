@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="WUPOS_model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="WUPOS_modelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="WUPOS_model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="WUPOS_modelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KlijentSet" EntityType="WUPOS_model.Klijent" />
+          <EntitySet Name="GoldCardSet" EntityType="WUPOS_model.GoldCard" />
+          <AssociationSet Name="KlijentGoldCard" Association="WUPOS_model.KlijentGoldCard">
+            <End Role="Klijent" EntitySet="KlijentSet" />
+            <End Role="GoldCard" EntitySet="GoldCardSet" />
+          </AssociationSet>
+          <EntitySet Name="TransferUplataSet" EntityType="WUPOS_model.TransferUplata" />
+          <EntitySet Name="ValutaSet" EntityType="WUPOS_model.Valuta" />
+          <EntitySet Name="DrzavaSet" EntityType="WUPOS_model.Drzava" />
+          <AssociationSet Name="ValutaDrzava" Association="WUPOS_model.ValutaDrzava">
+            <End Role="Valuta" EntitySet="ValutaSet" />
+            <End Role="Drzava" EntitySet="DrzavaSet" />
+          </AssociationSet>
+          <EntitySet Name="DrzavaValutaSet" EntityType="WUPOS_model.DrzavaValuta" />
+          <AssociationSet Name="ValutaDrazavaValuta" Association="WUPOS_model.ValutaDrazavaValuta">
+            <End Role="Valuta" EntitySet="ValutaSet" />
+            <End Role="DrazavaValuta" EntitySet="DrzavaValutaSet" />
+          </AssociationSet>
+          <AssociationSet Name="DrzavaDrazavaValuta" Association="WUPOS_model.DrzavaDrazavaValuta">
+            <End Role="Drzava" EntitySet="DrzavaSet" />
+            <End Role="DrazavaValuta" EntitySet="DrzavaValutaSet" />
+          </AssociationSet>
+          <AssociationSet Name="DrazavaValutaTransferIsplata" Association="WUPOS_model.DrazavaValutaTransferIsplata">
+            <End Role="DrazavaValuta" EntitySet="DrzavaValutaSet" />
+            <End Role="TransferIsplata" EntitySet="TransferUplataSet" />
+          </AssociationSet>
+          <EntitySet Name="UslugaDostaveSet" EntityType="WUPOS_model.UslugaDostave" />
+          <EntitySet Name="VrstaTransferaSet" EntityType="WUPOS_model.VrstaTransfera" />
+          <EntitySet Name="KlijentTransferSet" EntityType="WUPOS_model.KlijentTransfer" />
+          <AssociationSet Name="KlijentKlijentTransfer" Association="WUPOS_model.KlijentKlijentTransfer">
+            <End Role="Klijent" EntitySet="KlijentSet" />
+            <End Role="KlijentTransfer" EntitySet="KlijentTransferSet" />
+          </AssociationSet>
+          <AssociationSet Name="TransferUplataKlijentTransfer" Association="WUPOS_model.TransferUplataKlijentTransfer">
+            <End Role="TransferUplata" EntitySet="TransferUplataSet" />
+            <End Role="KlijentTransfer" EntitySet="KlijentTransferSet" />
+          </AssociationSet>
+          <AssociationSet Name="VrstaTransferaKlijentTransfer" Association="WUPOS_model.VrstaTransferaKlijentTransfer">
+            <End Role="VrstaTransfera" EntitySet="VrstaTransferaSet" />
+            <End Role="KlijentTransfer" EntitySet="KlijentTransferSet" />
+          </AssociationSet>
+          <EntitySet Name="UslugaDostaveDrzavaSet" EntityType="WUPOS_model.UslugaDostaveDrzava" />
+          <AssociationSet Name="DrzavaUslugaDostaveDrzava" Association="WUPOS_model.DrzavaUslugaDostaveDrzava">
+            <End Role="Drzava" EntitySet="DrzavaSet" />
+            <End Role="UslugaDostaveDrzava" EntitySet="UslugaDostaveDrzavaSet" />
+          </AssociationSet>
+          <AssociationSet Name="UslugaDostaveUslugaDostaveDrzava" Association="WUPOS_model.UslugaDostaveUslugaDostaveDrzava">
+            <End Role="UslugaDostave" EntitySet="UslugaDostaveSet" />
+            <End Role="UslugaDostaveDrzava" EntitySet="UslugaDostaveDrzavaSet" />
+          </AssociationSet>
+          <EntitySet Name="PozivniBrojDrzavaSet" EntityType="WUPOS_model.PozivniBrojDrzava" />
+          <AssociationSet Name="DrzavaPozivniBrojDrzava" Association="WUPOS_model.DrzavaPozivniBrojDrzava">
+            <End Role="Drzava" EntitySet="DrzavaSet" />
+            <End Role="PozivniBrojDrzava" EntitySet="PozivniBrojDrzavaSet" />
+          </AssociationSet>
+          <EntitySet Name="MobilniKodDrzavaSet" EntityType="WUPOS_model.MobilniKodDrzava" />
+          <AssociationSet Name="DrzavaMobilniKodDrzava" Association="WUPOS_model.DrzavaMobilniKodDrzava">
+            <End Role="Drzava" EntitySet="DrzavaSet" />
+            <End Role="MobilniKodDrzava" EntitySet="MobilniKodDrzavaSet" />
+          </AssociationSet>
+          <EntitySet Name="VrstaIdentifikacijeSet" EntityType="WUPOS_model.VrstaIdentifikacije" />
+          <EntitySet Name="IdentIspravaKlijentSet" EntityType="WUPOS_model.IdentIspravaKlijent" />
+          <AssociationSet Name="KlijentIdentIspravaKlijent" Association="WUPOS_model.KlijentIdentIspravaKlijent">
+            <End Role="Klijent" EntitySet="KlijentSet" />
+            <End Role="IdentIspravaKlijent" EntitySet="IdentIspravaKlijentSet" />
+          </AssociationSet>
+          <AssociationSet Name="VrstaIdentifikacijeIdentIspravaKlijent" Association="WUPOS_model.VrstaIdentifikacijeIdentIspravaKlijent">
+            <End Role="VrstaIdentifikacije" EntitySet="VrstaIdentifikacijeSet" />
+            <End Role="IdentIspravaKlijent" EntitySet="IdentIspravaKlijentSet" />
+          </AssociationSet>
+          <AssociationSet Name="DrzavaIdentIspravaKlijent" Association="WUPOS_model.DrzavaIdentIspravaKlijent">
+            <End Role="Drzava" EntitySet="DrzavaSet" />
+            <End Role="IdentIspravaKlijent" EntitySet="IdentIspravaKlijentSet" />
+          </AssociationSet>
+          <EntitySet Name="TransferIsplataSet" EntityType="WUPOS_model.TransferIsplata" />
+          <EntitySet Name="StatusIsplateSet" EntityType="WUPOS_model.StatusIsplate" />
+          <AssociationSet Name="StatusIsplateTransferUplata" Association="WUPOS_model.StatusIsplateTransferUplata">
+            <End Role="StatusIsplate" EntitySet="StatusIsplateSet" />
+            <End Role="TransferUplata" EntitySet="TransferUplataSet" />
+          </AssociationSet>
+          <AssociationSet Name="StatusIsplateTransferIsplata" Association="WUPOS_model.StatusIsplateTransferIsplata">
+            <End Role="StatusIsplate" EntitySet="StatusIsplateSet" />
+            <End Role="TransferIsplata" EntitySet="TransferIsplataSet" />
+          </AssociationSet>
+          <AssociationSet Name="TransferIsplataKlijentTransfer" Association="WUPOS_model.TransferIsplataKlijentTransfer">
+            <End Role="TransferIsplata" EntitySet="TransferIsplataSet" />
+            <End Role="KlijentTransfer" EntitySet="KlijentTransferSet" />
+          </AssociationSet>
+          <AssociationSet Name="ValutaTransferIsplata" Association="WUPOS_model.ValutaTransferIsplata">
+            <End Role="Valuta" EntitySet="ValutaSet" />
+            <End Role="TransferIsplata" EntitySet="TransferIsplataSet" />
+          </AssociationSet>
+          <AssociationSet Name="DrzavaTransferIsplata" Association="WUPOS_model.DrzavaTransferIsplata">
+            <End Role="Drzava" EntitySet="DrzavaSet" />
+            <End Role="TransferIsplata" EntitySet="TransferIsplataSet" />
+          </AssociationSet>
+          <EntitySet Name="SettingSet" EntityType="WUPOS_model.Setting" />
+          <EntitySet Name="HTMLelementSet" EntityType="WUPOS_model.HTMLelement" />
+          <EntitySet Name="URLSet" EntityType="WUPOS_model.URL" />
+          <EntitySet Name="URLRadnjeSet" EntityType="WUPOS_model.URLRadnje" />
+          <EntitySet Name="URLRadnjeLevelSet" EntityType="WUPOS_model.URLRadnjeLevel" />
+          <AssociationSet Name="URLURLRadnje" Association="WUPOS_model.URLURLRadnje">
+            <End Role="URL" EntitySet="URLSet" />
+            <End Role="URLRadnje" EntitySet="URLRadnjeSet" />
+          </AssociationSet>
+          <AssociationSet Name="URLRadnjeURLRadnjeLevel" Association="WUPOS_model.URLRadnjeURLRadnjeLevel">
+            <End Role="URLRadnje" EntitySet="URLRadnjeSet" />
+            <End Role="URLRadnjeLevel" EntitySet="URLRadnjeLevelSet" />
+          </AssociationSet>
+          <AssociationSet Name="URLRadnjeLevelHTMLelement" Association="WUPOS_model.URLRadnjeLevelHTMLelement">
+            <End Role="URLRadnjeLevel" EntitySet="URLRadnjeLevelSet" />
+            <End Role="HTMLelement" EntitySet="HTMLelementSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Klijent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Prezime" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ImePrezime" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="OIB" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Adresa" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Adresa2" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ZIP_pbroj" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Grad" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="DrzavaRodjenjaID" Type="Int32" Nullable="true" />
+          <Property Name="DatumRodjenja" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="GoldCard" Relationship="WUPOS_model.KlijentGoldCard" FromRole="Klijent" ToRole="GoldCard" />
+          <NavigationProperty Name="KlijentTransfer" Relationship="WUPOS_model.KlijentKlijentTransfer" FromRole="Klijent" ToRole="KlijentTransfer" />
+          <Property Name="GoldCardID" Type="Int32" Nullable="true" />
+          <Property Name="DrzavaID" Type="Int32" Nullable="true" />
+          <Property Name="Telefon" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Email" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Mobitel" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="IdentIspravaKlijent" Relationship="WUPOS_model.KlijentIdentIspravaKlijent" FromRole="Klijent" ToRole="IdentIspravaKlijent" />
+        </EntityType>
+        <EntityType Name="GoldCard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Broj" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="Klijent" Relationship="WUPOS_model.KlijentGoldCard" FromRole="GoldCard" ToRole="Klijent" />
+          <Property Name="KlijentID" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="KlijentGoldCard">
+          <End Type="WUPOS_model.Klijent" Role="Klijent" Multiplicity="1" />
+          <End Type="WUPOS_model.GoldCard" Role="GoldCard" Multiplicity="1" />
+        </Association>
+        <EntityType Name="TransferUplata">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrojOperatera" Type="String" Nullable="true" MaxLength="Max" >
+            <Documentation>
+              <LongDescription>rutavo i mutavo, ali je iz njihovog sustava to označavanje djelatnika</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="DrazavaValuta" Relationship="WUPOS_model.DrazavaValutaTransferIsplata" FromRole="TransferIsplata" ToRole="DrazavaValuta" />
+          <Property Name="DjelatnikID" Type="Int32" Nullable="true" />
+          <Property Name="IznosZaSlanje" Type="Decimal" Nullable="true" Precision="15" Scale="6" />
+          <Property Name="Naknada" Type="Decimal" Nullable="true" Precision="15" Scale="6" />
+          <Property Name="IznosZaIsplatu" Type="Decimal" Nullable="true" Precision="15" Scale="6" />
+          <Property Name="UkupnaUplata" Type="Decimal" Nullable="true" Precision="15" Scale="6" />
+          <Property Name="PorukaPrimatelju" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="KlijentTransfer" Relationship="WUPOS_model.TransferUplataKlijentTransfer" FromRole="TransferUplata" ToRole="KlijentTransfer" />
+          <Property Name="DrzavaValutaID" Type="Int32" Nullable="true" />
+          <Property Name="MTCN_broj" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="DatumNastanka" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="StatusIsplate" Relationship="WUPOS_model.StatusIsplateTransferUplata" FromRole="TransferUplata" ToRole="StatusIsplate" />
+          <Property Name="StatusIsplateID" Type="Int32" Nullable="true" />
+          <Property Name="TUplataID" Type="Int32" Nullable="true" />
+          <Property Name="Storno" Type="Boolean" Nullable="true" />
+          <Property Name="TestPitanje" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="TestOdgovor" Type="String" Nullable="true" MaxLength="Max" />
+        </EntityType>
+        <EntityType Name="Valuta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="Drzava" Relationship="WUPOS_model.ValutaDrzava" FromRole="Valuta" ToRole="Drzava" />
+          <NavigationProperty Name="DrazavaValuta" Relationship="WUPOS_model.ValutaDrazavaValuta" FromRole="Valuta" ToRole="DrazavaValuta" />
+          <NavigationProperty Name="TransferIsplata" Relationship="WUPOS_model.ValutaTransferIsplata" FromRole="Valuta" ToRole="TransferIsplata" />
+          </EntityType>
+        <EntityType Name="Drzava">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="MaticnaValutaID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Valuta" Relationship="WUPOS_model.ValutaDrzava" FromRole="Drzava" ToRole="Valuta" />
+          <NavigationProperty Name="DrazavaValuta" Relationship="WUPOS_model.DrzavaDrazavaValuta" FromRole="Drzava" ToRole="DrazavaValuta" />
+          <NavigationProperty Name="UslugaDostaveDrzava" Relationship="WUPOS_model.DrzavaUslugaDostaveDrzava" FromRole="Drzava" ToRole="UslugaDostaveDrzava" />
+          <NavigationProperty Name="PozivniBrojDrzava" Relationship="WUPOS_model.DrzavaPozivniBrojDrzava" FromRole="Drzava" ToRole="PozivniBrojDrzava" />
+          <NavigationProperty Name="MobilniKodDrzava" Relationship="WUPOS_model.DrzavaMobilniKodDrzava" FromRole="Drzava" ToRole="MobilniKodDrzava" />
+          <NavigationProperty Name="IdentIspravaKlijent" Relationship="WUPOS_model.DrzavaIdentIspravaKlijent" FromRole="Drzava" ToRole="IdentIspravaKlijent" />
+          <NavigationProperty Name="TransferIsplata" Relationship="WUPOS_model.DrzavaTransferIsplata" FromRole="Drzava" ToRole="TransferIsplata" />
+        </EntityType>
+        <Association Name="ValutaDrzava">
+          <End Type="WUPOS_model.Valuta" Role="Valuta" Multiplicity="1" />
+          <End Type="WUPOS_model.Drzava" Role="Drzava" Multiplicity="1" />
+        </Association>
+        <EntityType Name="DrzavaValuta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Valuta" Relationship="WUPOS_model.ValutaDrazavaValuta" FromRole="DrazavaValuta" ToRole="Valuta" />
+          <NavigationProperty Name="Drzava" Relationship="WUPOS_model.DrzavaDrazavaValuta" FromRole="DrazavaValuta" ToRole="Drzava" />
+          <NavigationProperty Name="TransferIsplata" Relationship="WUPOS_model.DrazavaValutaTransferIsplata" FromRole="DrazavaValuta" ToRole="TransferIsplata" />
+          <Property Name="ValutaID" Type="Int32" Nullable="true" />
+          <Property Name="DrzavaID" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="ValutaDrazavaValuta">
+          <End Type="WUPOS_model.Valuta" Role="Valuta" Multiplicity="1" />
+          <End Type="WUPOS_model.DrzavaValuta" Role="DrazavaValuta" Multiplicity="*" />
+        </Association>
+        <Association Name="DrzavaDrazavaValuta">
+          <End Type="WUPOS_model.Drzava" Role="Drzava" Multiplicity="1" />
+          <End Type="WUPOS_model.DrzavaValuta" Role="DrazavaValuta" Multiplicity="*" />
+        </Association>
+        <Association Name="DrazavaValutaTransferIsplata">
+          <End Type="WUPOS_model.DrzavaValuta" Role="DrazavaValuta" Multiplicity="1" />
+          <End Type="WUPOS_model.TransferUplata" Role="TransferIsplata" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UslugaDostave">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="UslugaDostaveDrzava" Relationship="WUPOS_model.UslugaDostaveUslugaDostaveDrzava" FromRole="UslugaDostave" ToRole="UslugaDostaveDrzava" />
+        </EntityType>
+        <EntityType Name="VrstaTransfera">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" >
+            <Documentation>
+              <LongDescription>TransferUplata, TransferIsplata</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="KlijentTransfer" Relationship="WUPOS_model.VrstaTransferaKlijentTransfer" FromRole="VrstaTransfera" ToRole="KlijentTransfer" />
+        </EntityType>
+        <EntityType Name="KlijentTransfer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PosiljateljID" Type="Int32" Nullable="true" />
+          <Property Name="PrimateljID" Type="Int32" Nullable="true" />
+          <Property Name="TransferID" Type="Int32" Nullable="true" />
+          <Property Name="VrstaTransferaID" Type="String" Nullable="false" />
+          <NavigationProperty Name="Klijent" Relationship="WUPOS_model.KlijentKlijentTransfer" FromRole="KlijentTransfer" ToRole="Klijent" />
+          <NavigationProperty Name="TransferUplata" Relationship="WUPOS_model.TransferUplataKlijentTransfer" FromRole="KlijentTransfer" ToRole="TransferUplata" />
+          <NavigationProperty Name="VrstaTransfera" Relationship="WUPOS_model.VrstaTransferaKlijentTransfer" FromRole="KlijentTransfer" ToRole="VrstaTransfera" />
+          <NavigationProperty Name="TransferIsplata" Relationship="WUPOS_model.TransferIsplataKlijentTransfer" FromRole="KlijentTransfer" ToRole="TransferIsplata" />
+        </EntityType>
+        <Association Name="KlijentKlijentTransfer">
+          <End Type="WUPOS_model.Klijent" Role="Klijent" Multiplicity="1" />
+          <End Type="WUPOS_model.KlijentTransfer" Role="KlijentTransfer" Multiplicity="*" />
+        </Association>
+        <Association Name="TransferUplataKlijentTransfer">
+          <End Type="WUPOS_model.TransferUplata" Role="TransferUplata" Multiplicity="1" />
+          <End Type="WUPOS_model.KlijentTransfer" Role="KlijentTransfer" Multiplicity="*" />
+        </Association>
+        <Association Name="VrstaTransferaKlijentTransfer">
+          <End Type="WUPOS_model.VrstaTransfera" Role="VrstaTransfera" Multiplicity="1" />
+          <End Type="WUPOS_model.KlijentTransfer" Role="KlijentTransfer" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UslugaDostaveDrzava">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DrzavaID" Type="Int32" Nullable="true" />
+          <Property Name="UslugaDostaveID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Drzava" Relationship="WUPOS_model.DrzavaUslugaDostaveDrzava" FromRole="UslugaDostaveDrzava" ToRole="Drzava" />
+          <NavigationProperty Name="UslugaDostave" Relationship="WUPOS_model.UslugaDostaveUslugaDostaveDrzava" FromRole="UslugaDostaveDrzava" ToRole="UslugaDostave" />
+        </EntityType>
+        <Association Name="DrzavaUslugaDostaveDrzava">
+          <End Type="WUPOS_model.Drzava" Role="Drzava" Multiplicity="1" />
+          <End Type="WUPOS_model.UslugaDostaveDrzava" Role="UslugaDostaveDrzava" Multiplicity="*" />
+        </Association>
+        <Association Name="UslugaDostaveUslugaDostaveDrzava">
+          <End Type="WUPOS_model.UslugaDostave" Role="UslugaDostave" Multiplicity="1" />
+          <End Type="WUPOS_model.UslugaDostaveDrzava" Role="UslugaDostaveDrzava" Multiplicity="*" />
+        </Association>
+        <EntityType Name="PozivniBrojDrzava">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="PBroj" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="DrzavaID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Drzava" Relationship="WUPOS_model.DrzavaPozivniBrojDrzava" FromRole="PozivniBrojDrzava" ToRole="Drzava" />
+        </EntityType>
+        <Association Name="DrzavaPozivniBrojDrzava">
+          <End Type="WUPOS_model.Drzava" Role="Drzava" Multiplicity="1" />
+          <End Type="WUPOS_model.PozivniBrojDrzava" Role="PozivniBrojDrzava" Multiplicity="1" />
+        </Association>
+        <EntityType Name="MobilniKodDrzava">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="MKod" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="DrzavaID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Drzava" Relationship="WUPOS_model.DrzavaMobilniKodDrzava" FromRole="MobilniKodDrzava" ToRole="Drzava" />
+        </EntityType>
+        <Association Name="DrzavaMobilniKodDrzava">
+          <End Type="WUPOS_model.Drzava" Role="Drzava" Multiplicity="1" />
+          <End Type="WUPOS_model.MobilniKodDrzava" Role="MobilniKodDrzava" Multiplicity="1" />
+        </Association>
+        <EntityType Name="VrstaIdentifikacije">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="IdentIspravaKlijent" Relationship="WUPOS_model.VrstaIdentifikacijeIdentIspravaKlijent" FromRole="VrstaIdentifikacije" ToRole="IdentIspravaKlijent" />
+        </EntityType>
+        <EntityType Name="IdentIspravaKlijent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Klijent" Relationship="WUPOS_model.KlijentIdentIspravaKlijent" FromRole="IdentIspravaKlijent" ToRole="Klijent" />
+          <NavigationProperty Name="VrstaIdentifikacije" Relationship="WUPOS_model.VrstaIdentifikacijeIdentIspravaKlijent" FromRole="IdentIspravaKlijent" ToRole="VrstaIdentifikacije" />
+          <Property Name="VrstaID" Type="Int32" Nullable="true" />
+          <Property Name="Broj" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="PotvrdaIdentifikacije" Type="Boolean" Nullable="true" />
+          <Property Name="Zanimanje" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="DrzavaIzdavanjaID" Type="Int32" Nullable="true" />
+          <Property Name="Komentar" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="Drzava" Relationship="WUPOS_model.DrzavaIdentIspravaKlijent" FromRole="IdentIspravaKlijent" ToRole="Drzava" />
+        </EntityType>
+        <Association Name="KlijentIdentIspravaKlijent">
+          <End Type="WUPOS_model.Klijent" Role="Klijent" Multiplicity="1" />
+          <End Type="WUPOS_model.IdentIspravaKlijent" Role="IdentIspravaKlijent" Multiplicity="*" />
+        </Association>
+        <Association Name="VrstaIdentifikacijeIdentIspravaKlijent">
+          <End Type="WUPOS_model.VrstaIdentifikacije" Role="VrstaIdentifikacije" Multiplicity="1" />
+          <End Type="WUPOS_model.IdentIspravaKlijent" Role="IdentIspravaKlijent" Multiplicity="*" />
+        </Association>
+        <Association Name="DrzavaIdentIspravaKlijent">
+          <End Type="WUPOS_model.Drzava" Role="Drzava" Multiplicity="1" />
+          <End Type="WUPOS_model.IdentIspravaKlijent" Role="IdentIspravaKlijent" Multiplicity="*" />
+        </Association>
+        <EntityType Name="TransferIsplata">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BrojOperatera" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="DjelatnikID" Type="Int32" Nullable="true" />
+          <Property Name="MTCN_broj" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="IznosZaIsplatu" Type="Decimal" Nullable="true" Precision="15" Scale="6" />
+          <NavigationProperty Name="StatusIsplate" Relationship="WUPOS_model.StatusIsplateTransferIsplata" FromRole="TransferIsplata" ToRole="StatusIsplate" />
+          <Property Name="TecajNaDan" Type="Decimal" Nullable="true" Precision="15" Scale="6" />
+          <Property Name="StatusIsplateID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="KlijentTransfer" Relationship="WUPOS_model.TransferIsplataKlijentTransfer" FromRole="TransferIsplata" ToRole="KlijentTransfer" />
+          <NavigationProperty Name="Valuta" Relationship="WUPOS_model.ValutaTransferIsplata" FromRole="TransferIsplata" ToRole="Valuta" />
+          <Property Name="ValutaID" Type="Int32" Nullable="true" />
+          <Property Name="ValutaNaziv" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="DrzavaSlanjaID" Type="String" Nullable="false" />
+          <NavigationProperty Name="Drzava" Relationship="WUPOS_model.DrzavaTransferIsplata" FromRole="TransferIsplata" ToRole="Drzava" />
+          <Property Name="DatumNastanka" Type="DateTime" Nullable="true" />
+          <Property Name="TIsplataID" Type="Int32" Nullable="true" />
+          <Property Name="Storno" Type="Boolean" Nullable="true" />
+        </EntityType>
+        <EntityType Name="StatusIsplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="TransferUplata" Relationship="WUPOS_model.StatusIsplateTransferUplata" FromRole="StatusIsplate" ToRole="TransferUplata" />
+          <NavigationProperty Name="TransferIsplata" Relationship="WUPOS_model.StatusIsplateTransferIsplata" FromRole="StatusIsplate" ToRole="TransferIsplata" />
+        </EntityType>
+        <Association Name="StatusIsplateTransferUplata">
+          <End Type="WUPOS_model.StatusIsplate" Role="StatusIsplate" Multiplicity="1" />
+          <End Type="WUPOS_model.TransferUplata" Role="TransferUplata" Multiplicity="*" />
+        </Association>
+        <Association Name="StatusIsplateTransferIsplata">
+          <End Type="WUPOS_model.StatusIsplate" Role="StatusIsplate" Multiplicity="1" />
+          <End Type="WUPOS_model.TransferIsplata" Role="TransferIsplata" Multiplicity="*" />
+        </Association>
+        <Association Name="TransferIsplataKlijentTransfer">
+          <End Type="WUPOS_model.TransferIsplata" Role="TransferIsplata" Multiplicity="1" />
+          <End Type="WUPOS_model.KlijentTransfer" Role="KlijentTransfer" Multiplicity="*" />
+        </Association>
+        <Association Name="ValutaTransferIsplata">
+          <End Type="WUPOS_model.Valuta" Role="Valuta" Multiplicity="1" />
+          <End Type="WUPOS_model.TransferIsplata" Role="TransferIsplata" Multiplicity="*" />
+        </Association>
+        <Association Name="DrzavaTransferIsplata">
+          <End Type="WUPOS_model.Drzava" Role="Drzava" Multiplicity="1" />
+          <End Type="WUPOS_model.TransferIsplata" Role="TransferIsplata" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Setting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" MaxLength="Max" >
+            <Documentation>
+              <LongDescription>Setting koji se veže na postavke app-a i dodaje dinamički</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Value" Type="String" Nullable="true" MaxLength="Max" >
+          </Property>
+        </EntityType>
+        <EntityType Name="HTMLelement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ElementaID" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ElementName" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ElementClassName" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ElementTagName" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ElementLinkText" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ElementCSSSelector" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="ElementXPath" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Description" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="LevelID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="URLRadnjeLevel" Relationship="WUPOS_model.URLRadnjeLevelHTMLelement" FromRole="HTMLelement" ToRole="URLRadnjeLevel" />
+          <Property Name="LevelUp" Type="Boolean" Nullable="true" />
+          <Property Name="LevelDown" Type="Boolean" Nullable="true" />
+        </EntityType>
+        <EntityType Name="URL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URLValue" Type="String" Nullable="true" MaxLength="Max" />
+          <NavigationProperty Name="URLRadnje" Relationship="WUPOS_model.URLURLRadnje" FromRole="URL" ToRole="URLRadnje" />
+        </EntityType>
+        <EntityType Name="URLRadnje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RadnjaTab" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="URLId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="URL" Relationship="WUPOS_model.URLURLRadnje" FromRole="URLRadnje" ToRole="URL" />
+          <NavigationProperty Name="URLRadnjeLevel" Relationship="WUPOS_model.URLRadnjeURLRadnjeLevel" FromRole="URLRadnje" ToRole="URLRadnjeLevel" />
+        </EntityType>
+        <EntityType Name="URLRadnjeLevel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Number" Type="Int32" Nullable="true" />
+          <Property Name="URLRadnjeID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="URLRadnje" Relationship="WUPOS_model.URLRadnjeURLRadnjeLevel" FromRole="URLRadnjeLevel" ToRole="URLRadnje" />
+          <NavigationProperty Name="HTMLelement" Relationship="WUPOS_model.URLRadnjeLevelHTMLelement" FromRole="URLRadnjeLevel" ToRole="HTMLelement" />
+        </EntityType>
+        <Association Name="URLURLRadnje">
+          <End Type="WUPOS_model.URL" Role="URL" Multiplicity="1" />
+          <End Type="WUPOS_model.URLRadnje" Role="URLRadnje" Multiplicity="*" />
+        </Association>
+        <Association Name="URLRadnjeURLRadnjeLevel">
+          <End Type="WUPOS_model.URLRadnje" Role="URLRadnje" Multiplicity="1" />
+          <End Type="WUPOS_model.URLRadnjeLevel" Role="URLRadnjeLevel" Multiplicity="*" />
+        </Association>
+        <Association Name="URLRadnjeLevelHTMLelement">
+          <End Type="WUPOS_model.URLRadnjeLevel" Role="URLRadnjeLevel" Multiplicity="1" />
+          <End Type="WUPOS_model.HTMLelement" Role="HTMLelement" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="WUPOS_model" />
+        <Alias Key="Target" Value="WUPOS_model.Store" />
+        <EntityContainerMapping CdmEntityContainer="WUPOS_modelContainer" StorageEntityContainer="WUPOS_modelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
